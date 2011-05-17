@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62492D0013831AAF0007D729 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62492CFF13831AAF0007D729 /* Cocoa.framework */; };
+		62492D0A13831AAF0007D729 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62492D0813831AAF0007D729 /* InfoPlist.strings */; };
+		62492D1213831AB00007D729 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62492CFF13831AAF0007D729 /* Cocoa.framework */; };
+		62492D1513831AB00007D729 /* VPLHTTPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62492CFC13831AAF0007D729 /* VPLHTTPClient.framework */; };
+		62492D1B13831AB00007D729 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62492D1913831AB00007D729 /* InfoPlist.strings */; };
+		62492D1E13831AB00007D729 /* VPLHTTPClientTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 62492D1D13831AB00007D729 /* VPLHTTPClientTests.h */; };
+		62492D2013831AB00007D729 /* VPLHTTPClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62492D1F13831AB00007D729 /* VPLHTTPClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62492D1313831AB00007D729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62492CF213831AAF0007D729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62492CFB13831AAF0007D729;
+			remoteInfo = VPLHTTPClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		62492CFC13831AAF0007D729 /* VPLHTTPClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VPLHTTPClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62492CFF13831AAF0007D729 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		62492D0213831AAF0007D729 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		62492D0313831AAF0007D729 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		62492D0413831AAF0007D729 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		62492D0713831AAF0007D729 /* VPLHTTPClient-Info.plist */ = {isa = PBXFileReference; path = "VPLHTTPClient-Info.plist"; sourceTree = "<group>"; };
+		62492D0913831AAF0007D729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		62492D0B13831AAF0007D729 /* VPLHTTPClient-Prefix.pch */ = {isa = PBXFileReference; path = "VPLHTTPClient-Prefix.pch"; sourceTree = "<group>"; };
+		62492D1113831AB00007D729 /* VPLHTTPClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VPLHTTPClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62492D1813831AB00007D729 /* VPLHTTPClientTests-Info.plist */ = {isa = PBXFileReference; path = "VPLHTTPClientTests-Info.plist"; sourceTree = "<group>"; };
+		62492D1A13831AB00007D729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		62492D1C13831AB00007D729 /* VPLHTTPClientTests-Prefix.pch */ = {isa = PBXFileReference; path = "VPLHTTPClientTests-Prefix.pch"; sourceTree = "<group>"; };
+		62492D1D13831AB00007D729 /* VPLHTTPClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPLHTTPClientTests.h; sourceTree = "<group>"; };
+		62492D1F13831AB00007D729 /* VPLHTTPClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62492CF813831AAF0007D729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62492D0013831AAF0007D729 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62492D0D13831AB00007D729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62492D1213831AB00007D729 /* Cocoa.framework in Frameworks */,
+				62492D1513831AB00007D729 /* VPLHTTPClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		62492CF013831AAF0007D729 = {
+			isa = PBXGroup;
+			children = (
+				62492D0513831AAF0007D729 /* VPLHTTPClient */,
+				62492D1613831AB00007D729 /* VPLHTTPClientTests */,
+				62492CFE13831AAF0007D729 /* Frameworks */,
+				62492CFD13831AAF0007D729 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62492CFD13831AAF0007D729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62492CFC13831AAF0007D729 /* VPLHTTPClient.framework */,
+				62492D1113831AB00007D729 /* VPLHTTPClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62492CFE13831AAF0007D729 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62492CFF13831AAF0007D729 /* Cocoa.framework */,
+				62492D0113831AAF0007D729 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62492D0113831AAF0007D729 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62492D0213831AAF0007D729 /* AppKit.framework */,
+				62492D0313831AAF0007D729 /* CoreData.framework */,
+				62492D0413831AAF0007D729 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		62492D0513831AAF0007D729 /* VPLHTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				62492D0613831AAF0007D729 /* Supporting Files */,
+			);
+			path = VPLHTTPClient;
+			sourceTree = "<group>";
+		};
+		62492D0613831AAF0007D729 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62492D0713831AAF0007D729 /* VPLHTTPClient-Info.plist */,
+				62492D0813831AAF0007D729 /* InfoPlist.strings */,
+				62492D0B13831AAF0007D729 /* VPLHTTPClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62492D1613831AB00007D729 /* VPLHTTPClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				62492D1D13831AB00007D729 /* VPLHTTPClientTests.h */,
+				62492D1F13831AB00007D729 /* VPLHTTPClientTests.m */,
+				62492D1713831AB00007D729 /* Supporting Files */,
+			);
+			path = VPLHTTPClientTests;
+			sourceTree = "<group>";
+		};
+		62492D1713831AB00007D729 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62492D1813831AB00007D729 /* VPLHTTPClientTests-Info.plist */,
+				62492D1913831AB00007D729 /* InfoPlist.strings */,
+				62492D1C13831AB00007D729 /* VPLHTTPClientTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		62492CF913831AAF0007D729 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		62492CFB13831AAF0007D729 /* VPLHTTPClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62492D2313831AB00007D729 /* Build configuration list for PBXNativeTarget "VPLHTTPClient" */;
+			buildPhases = (
+				62492CF713831AAF0007D729 /* Sources */,
+				62492CF813831AAF0007D729 /* Frameworks */,
+				62492CF913831AAF0007D729 /* Headers */,
+				62492CFA13831AAF0007D729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VPLHTTPClient;
+			productName = VPLHTTPClient;
+			productReference = 62492CFC13831AAF0007D729 /* VPLHTTPClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		62492D1013831AB00007D729 /* VPLHTTPClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62492D2613831AB00007D729 /* Build configuration list for PBXNativeTarget "VPLHTTPClientTests" */;
+			buildPhases = (
+				62492D0C13831AB00007D729 /* Sources */,
+				62492D0D13831AB00007D729 /* Frameworks */,
+				62492D0E13831AB00007D729 /* Resources */,
+				62492D0F13831AB00007D729 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62492D1413831AB00007D729 /* PBXTargetDependency */,
+			);
+			name = VPLHTTPClientTests;
+			productName = VPLHTTPClientTests;
+			productReference = 62492D1113831AB00007D729 /* VPLHTTPClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62492CF213831AAF0007D729 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 62492CF513831AAF0007D729 /* Build configuration list for PBXProject "VPLHTTPClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 62492CF013831AAF0007D729;
+			productRefGroup = 62492CFD13831AAF0007D729 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				62492CFB13831AAF0007D729 /* VPLHTTPClient */,
+				62492D1013831AB00007D729 /* VPLHTTPClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62492CFA13831AAF0007D729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62492D0A13831AAF0007D729 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62492D0E13831AB00007D729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62492D1B13831AB00007D729 /* InfoPlist.strings in Resources */,
+				62492D1E13831AB00007D729 /* VPLHTTPClientTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62492D0F13831AB00007D729 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62492CF713831AAF0007D729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62492D0C13831AB00007D729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62492D2013831AB00007D729 /* VPLHTTPClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62492D1413831AB00007D729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62492CFB13831AAF0007D729 /* VPLHTTPClient */;
+			targetProxy = 62492D1313831AB00007D729 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		62492D0813831AAF0007D729 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62492D0913831AAF0007D729 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		62492D1913831AB00007D729 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62492D1A13831AB00007D729 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62492D2113831AB00007D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		62492D2213831AB00007D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		62492D2413831AB00007D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VPLHTTPClient/VPLHTTPClient-Prefix.pch";
+				INFOPLIST_FILE = "VPLHTTPClient/VPLHTTPClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		62492D2513831AB00007D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VPLHTTPClient/VPLHTTPClient-Prefix.pch";
+				INFOPLIST_FILE = "VPLHTTPClient/VPLHTTPClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		62492D2713831AB00007D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VPLHTTPClientTests/VPLHTTPClientTests-Prefix.pch";
+				INFOPLIST_FILE = "VPLHTTPClientTests/VPLHTTPClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		62492D2813831AB00007D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VPLHTTPClientTests/VPLHTTPClientTests-Prefix.pch";
+				INFOPLIST_FILE = "VPLHTTPClientTests/VPLHTTPClientTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62492CF513831AAF0007D729 /* Build configuration list for PBXProject "VPLHTTPClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62492D2113831AB00007D729 /* Debug */,
+				62492D2213831AB00007D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62492D2313831AB00007D729 /* Build configuration list for PBXNativeTarget "VPLHTTPClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62492D2413831AB00007D729 /* Debug */,
+				62492D2513831AB00007D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		62492D2613831AB00007D729 /* Build configuration list for PBXNativeTarget "VPLHTTPClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62492D2713831AB00007D729 /* Debug */,
+				62492D2813831AB00007D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62492CF213831AAF0007D729 /* Project object */;
+}
