@@ -1,0 +1,54 @@
+PATH
+  remote: ../rxcode
+  specs:
+    rxcode (0.0.1)
+      plist
+
+PATH
+  remote: ../speckle
+  specs:
+    speckle (0.0.1)
+      nokogiri
+      nokogiri (~> 1.4.4)
+      optitron
+      optitron
+      plist
+      plist (~> 3.1.0)
+      rspec
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    callsite (0.0.4)
+    diff-lcs (1.1.2)
+    nokogiri (1.4.4)
+    optitron (0.3.2)
+      callsite (~> 0.0.4)
+      parameters_extra (~> 0.2.0)
+    parameters_extra (0.2.0)
+      ruby2ruby (~> 1.2.4)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0.4)
+    plist (3.1.0)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.2)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
+    ruby2ruby (1.2.5)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
+    ruby_parser (2.0.6)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rspec (~> 2.5.0)
+  rxcode!
+  speckle!
