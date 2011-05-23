@@ -34,11 +34,6 @@
 		62492D0713831AAF0007D729 /* VPLHTTPClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VPLHTTPClient-Info.plist"; sourceTree = "<group>"; };
 		62492D0913831AAF0007D729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		62492D0B13831AAF0007D729 /* VPLHTTPClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VPLHTTPClient-Prefix.pch"; sourceTree = "<group>"; };
-		62492D1813831AB00007D729 /* VPLHTTPClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VPLHTTPClientTests-Info.plist"; sourceTree = "<group>"; };
-		62492D1A13831AB00007D729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		62492D1C13831AB00007D729 /* VPLHTTPClientTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VPLHTTPClientTests-Prefix.pch"; sourceTree = "<group>"; };
-		62492D1D13831AB00007D729 /* VPLHTTPClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPLHTTPClientTests.h; sourceTree = "<group>"; };
-		62492D1F13831AB00007D729 /* VPLHTTPClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPClientTests.m; sourceTree = "<group>"; };
 		62492D2913831AD10007D729 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62492D2C13831FBD0007D729 /* VPLHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPClient.h; sourceTree = "<group>"; };
 		62492D2D13831FBD0007D729 /* VPLHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPClient.m; sourceTree = "<group>"; };
@@ -73,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				62492D0513831AAF0007D729 /* VPLHTTPClient */,
-				62492D1613831AB00007D729 /* VPLHTTPClientTests */,
 				62492CFE13831AAF0007D729 /* Frameworks */,
 				62492CFD13831AAF0007D729 /* Products */,
 			);
@@ -121,26 +115,6 @@
 				62492D0713831AAF0007D729 /* VPLHTTPClient-Info.plist */,
 				62492D0813831AAF0007D729 /* InfoPlist.strings */,
 				62492D0B13831AAF0007D729 /* VPLHTTPClient-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		62492D1613831AB00007D729 /* VPLHTTPClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				62492D1D13831AB00007D729 /* VPLHTTPClientTests.h */,
-				62492D1F13831AB00007D729 /* VPLHTTPClientTests.m */,
-				62492D1713831AB00007D729 /* Supporting Files */,
-			);
-			path = VPLHTTPClientTests;
-			sourceTree = "<group>";
-		};
-		62492D1713831AB00007D729 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				62492D1813831AB00007D729 /* VPLHTTPClientTests-Info.plist */,
-				62492D1913831AB00007D729 /* InfoPlist.strings */,
-				62492D1C13831AB00007D729 /* VPLHTTPClientTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,14 +252,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				62492D0913831AAF0007D729 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		62492D1913831AB00007D729 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62492D1A13831AB00007D729 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
