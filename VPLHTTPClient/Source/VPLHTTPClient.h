@@ -28,8 +28,17 @@
  */
 + (void)setNetworkRequestsEnabled:(BOOL)networkRequestsEnabled;
 
+/*!
+ *  Registers a global handler for the given URI string that returns the given response. With
+ *  #setNetworkRequestsEnabled:, this allows HTTP requests to be mocked during testing.
+ */
 + (void)registerResponse:(VPLHTTPResponse *)response
                   forURI:(NSString *)uriString;
+
+/*!
+ *  Resets all global state, re-enabling network requests and removing all registered URI handlers.
+ */
++ (void)reset;
 
 // ===== REQUEST HANDLERS ==============================================================================================
 

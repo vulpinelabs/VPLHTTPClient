@@ -24,7 +24,6 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 {
   self = [super init];
   if (self) {
-      // Initialization code here.
     _requestHandlers = [[NSMutableArray alloc] initWithCapacity:8];
   }
   
@@ -38,6 +37,8 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 }
 
 // ===== REQUEST HANDLER REGISTRY ======================================================================================
+#pragma mark -
+#pragma Request Handler Registry
 
 + (BOOL)networkRequestsEnabled
 {
@@ -56,7 +57,21 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 + (void)registerResponse:(VPLHTTPResponse *)response
                   forURI:(NSString *)uriString
 {
-    // TODO
+  VPLHTTPGenericRequestHandler * handler = [[VPLHTTPGenericRequestHandler alloc] initWithResponse:response];
+  [handler setRequestPredicate:[NSPredicate predicateWithFormat:@"URLString = %@", uriString]];
+  
+  @synchronized (self) {
+    [VPLHTTPClientGlobalHandlers addObject:handler];
+  }
+  [handler release];
+}
+
++ (void)reset
+{
+  @synchronized (self) {
+    TKNetworkRequestsEnabled = YES;
+    [VPLHTTPClientGlobalHandlers removeAllObjects];
+  }
 }
 
 // ===== REQUEST HANDLERS ==============================================================================================
@@ -99,6 +114,17 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
     
   }
   
+  NSMutableArray * globalHandlers = nil;
+  @synchronized ([self class]) {
+    globalHandlers = [VPLHTTPClientGlobalHandlers copy];
+  }
+  
+  for (NSObject<VPLHTTPRequestHandler> * handler in _requestHandlers) {
+    if ([handler canPerformRequest:request]) return YES;
+  }
+  
+  [globalHandlers release];
+  
   return [super canPerformRequest:request];
 }
 
@@ -114,6 +140,23 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
       return;
     }
   }
+  
+  NSMutableArray * globalHandlers = nil;
+  @synchronized ([self class]) {
+    globalHandlers = [VPLHTTPClientGlobalHandlers copy];
+  }
+  
+  [globalHandlers autorelease];
+  
+  for (NSObject<VPLHTTPRequestHandler> * handler in globalHandlers) {
+    if ([handler canPerformRequest:request]) {
+      [handler performRequest:request
+                      success:successCallback
+                        error:errorCallback];
+      return;
+    }
+  }
+  
   
   if ([[self class] networkRequestsEnabled]) {
     

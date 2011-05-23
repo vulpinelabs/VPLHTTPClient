@@ -146,7 +146,7 @@ describe "VPLHTTPClient" do
     
   end
   
-  # ===== NETWORK REQUESTS ================================================================================================
+  # ===== NETWORK REQUESTS =============================================================================================
   
   describe ".setNetworkRequestsEnabled:" do
     
@@ -164,6 +164,38 @@ describe "VPLHTTPClient" do
       
       VPLHTTPClient.setNetworkRequestsEnabled(true)
       VPLHTTPClient.networkRequestsEnabled.should == true
+    end
+    
+  end
+  
+  # ===== URI REGISTRATION =============================================================================================
+  
+  describe ".registerResponse:forURI:" do
+    
+    before(:each) do
+      @request = VPLHTTPRequest.alloc.initWithURLString("http://localhost.localdomain/path/to/resource")
+      
+      @response = VPLHTTPResponse.response
+      @request_error = nil
+      @response_data = nil
+      
+      VPLHTTPClient.registerResponse(@response, forURI:"http://localhost.localdomain/path/to/resource")
+    end
+    
+    it "should register a handler for the given URI that returns the given response" do
+      @client.performRequest(@request,
+                             success:Proc.new { |response| @response_data = @response.body },
+                             error:Proc.new { |error| @request_error = error })
+                             
+      @request_error.should == nil
+      @response_data.should equal(@response.body)
+    end
+    
+    it "should only handle requests for the given URI" do
+      lambda {
+        other_request = VPLHTTPRequest.alloc.initWithURLString("http://localhost.localdomain/path/to/other/resource")
+        @client.performRequest(other_request, success:Proc.new { |response| }, error:Proc.new { |error| })
+      }.should raise_error
     end
     
   end
