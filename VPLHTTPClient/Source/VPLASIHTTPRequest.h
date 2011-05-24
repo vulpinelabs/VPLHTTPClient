@@ -17,4 +17,7 @@
   ASIHTTPRequest * _asiHttpRequest;
 }
 
+- (id)initWithURL:(NSURL *)requestURL;
+- (id)initWithURLString:(NSString *)requestURLString;
+
 @end

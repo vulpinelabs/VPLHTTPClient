@@ -7,6 +7,7 @@
 //
 
 #import "VPLASIHTTPRequest.h"
+#import "VPLASIHTTPRequest+Protected.h"
 #import "ASIHTTPRequest.h"
 
 @implementation VPLASIHTTPRequest

@@ -43,6 +43,7 @@
 		62A29F51138B40B200598C6A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A29F50138B40B100598C6A /* CoreServices.framework */; };
 		62A29F5B138B414C00598C6A /* VPLASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A29F5C138B414D00598C6A /* VPLASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */; };
+		62A29F5E138B50A500598C6A /* VPLASIHTTPRequest+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		62A29F50138B40B100598C6A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLASIHTTPRequest.h; sourceTree = "<group>"; };
 		62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLASIHTTPRequest.m; sourceTree = "<group>"; };
+		62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VPLASIHTTPRequest+Protected.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				62492D3013831FBD0007D729 /* VPLHTTPGenericRequestHandler.h */,
 				62492D3113831FBD0007D729 /* VPLHTTPGenericRequestHandler.m */,
 				62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */,
+				62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */,
 				62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */,
 			);
 			path = Source;
@@ -229,6 +232,7 @@
 				62A29F43138B3FD800598C6A /* ASIInputStream.h in Headers */,
 				62A29F45138B3FD800598C6A /* ASINetworkQueue.h in Headers */,
 				62A29F47138B3FD800598C6A /* ASIProgressDelegate.h in Headers */,
+				62A29F5E138B50A500598C6A /* VPLASIHTTPRequest+Protected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

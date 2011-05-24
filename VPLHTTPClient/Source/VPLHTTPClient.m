@@ -9,6 +9,9 @@
 #import "VPLHTTPClient.h"
 #import "VPLHTTPRequest.h"
 #import "VPLHTTPGenericRequestHandler.h"
+#import "VPLASIHTTPRequest.h"
+#import "VPLASIHTTPRequest+Protected.h"
+#import "ASIHTTPRequest.h"
 
 static BOOL TKNetworkRequestsEnabled = YES;
 static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
@@ -24,7 +27,8 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 {
   self = [super init];
   if (self) {
-    
+    _requestQueue = [[NSOperationQueue alloc] init];
+    [_requestQueue setMaxConcurrentOperationCount:1];
   }
   
   return self;
@@ -32,12 +36,14 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 
 - (void)dealloc
 {
+  [_name release];
+  [_requestQueue release];
   [super dealloc];
 }
 
 // ===== REQUEST HANDLER REGISTRY ======================================================================================
 #pragma mark -
-#pragma Request Handler Registry
+#pragma mark Request Handler Registry
 
 + (BOOL)networkRequestsEnabled
 {
@@ -73,6 +79,30 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
 }
 
+// ===== NAME ==========================================================================================================
+#pragma mark -
+#pragma mark Name
+
+@synthesize name=_name;
+
+- (void)setName:(NSString *)name
+{
+  if (name != _name) {
+    [_name release];
+    _name = [name retain];
+    [_requestQueue setName:name];
+  }
+}
+
+// ===== REQUESTS ======================================================================================================
+#pragma mark -
+#pragma mark Requests
+
+- (NSObject <VPLHTTPRequest> *)GETRequestWithURLString:(NSString *)url
+{
+  return [[VPLASIHTTPRequest alloc] initWithURLString:url];
+}
+
 // ===== REQUEST DISPATCH ==============================================================================================
 #pragma mark -
 #pragma mark Request Dispatch
@@ -90,7 +120,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   
   [globalHandlers release];
   
-  return NO;
+  return [request isKindOfClass:[VPLASIHTTPRequest class]];
 }
 
 - (void)performRequest:(NSObject <VPLHTTPRequest> *)request
@@ -116,10 +146,19 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   
   if ([[self class] networkRequestsEnabled]) {
     
-    NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
-                                          code:VPLHTTPRequestNotPerformedError
-                                      userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
-    errorCallback(error);
+    if ([request isKindOfClass:[VPLASIHTTPRequest class]]) {
+      
+      // add the request
+      [_requestQueue addOperation:[(VPLASIHTTPRequest *)request _httpRequest]];
+      
+    } else {
+      
+      NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
+                                            code:VPLHTTPRequestNotPerformedError
+                                        userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
+      errorCallback(error);
+    
+    }
     
   } else {
     

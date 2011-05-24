@@ -14,8 +14,11 @@
  */
 @interface VPLHTTPClient : NSObject <VPLHTTPRequestHandler> {
 @private
-  
+  NSString * _name;
+  NSOperationQueue * _requestQueue;
 }
+
+// ===== NETWORK REQUEST TOGGLE ========================================================================================
 
 /*!
  *  Determines if network requests are enabled or not.
@@ -28,6 +31,8 @@
  */
 + (void)setNetworkRequestsEnabled:(BOOL)networkRequestsEnabled;
 
+// ===== GLOBAL REQUEST HANDLERS =======================================================================================
+
 /*!
  *  Registers a global handler for the given URI string that returns the given response. With
  *  #setNetworkRequestsEnabled:, this allows HTTP requests to be mocked during testing.
@@ -39,5 +44,13 @@
  *  Resets all global state, re-enabling network requests and removing all registered URI handlers.
  */
 + (void)reset;
+
+// ===== NAME ==========================================================================================================
+
+@property (nonatomic, retain) NSString * name;
+
+// ===== REQUESTS ======================================================================================================
+
+- (NSObject <VPLHTTPRequest> *)GETRequestWithURLString:(NSString *)url;
 
 @end
