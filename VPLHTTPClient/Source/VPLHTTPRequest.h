@@ -20,4 +20,19 @@
 
 - (NSURL *)URL;
 
+// ===== HEADERS =======================================================================================================
+
+@property (nonatomic,readonly,retain) NSDictionary * requestHeaders;
+
+- (void)addRequestHeader:(NSString *)headerName
+                   value:(NSString *)headerValue;
+
+// ===== AUTHENTICATION ================================================================================================
+
+@property (nonatomic,readonly,retain) NSString * username;
+@property (nonatomic,readonly,retain) NSString * password;
+
+- (void)setUsername:(NSString *)username
+           password:(NSString *)password;
+
 @end

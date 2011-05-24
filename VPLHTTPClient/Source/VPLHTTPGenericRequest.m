@@ -8,7 +8,6 @@
 
 #import "VPLHTTPGenericRequest.h"
 
-
 @implementation VPLHTTPGenericRequest
 
 - (id)initWithURLString:(NSString *)URLString
@@ -27,10 +26,12 @@
 {
   [_URLString release];
   [_requestMethod release];
+  [_requestHeaders release];
+  [_username release];
+  [_password release];
   
   [super dealloc];
 }
-
 
 // ===== REQUEST METHOD ================================================================================================
 #pragma mark -
@@ -50,6 +51,44 @@
     return [NSURL URLWithString:self.URLString];
   } else {
     return nil;
+  }
+}
+
+// ===== HEADERS =======================================================================================================
+#pragma mark -
+#pragma mark Headers
+
+- (NSDictionary *)requestHeaders
+{
+  return _requestHeaders;
+}
+
+- (void)addRequestHeader:(NSString *)headerName
+                   value:(NSString *)headerValue
+{
+  [_requestHeaders setObject:headerValue
+                      forKey:headerName];
+}
+
+// ===== AUTHENTICATION ================================================================================================
+#pragma mark -
+#pragma mark Authentication
+
+@synthesize username=_username;
+
+@synthesize password=_password;
+
+- (void)setUsername:(NSString *)username
+           password:(NSString *)password
+{
+  if (username != _username) {
+    [_username release];
+    _username = [username retain];
+  }
+  
+  if (password != _password) {
+    [_password release];
+    _password = [password retain];
   }
 }
 

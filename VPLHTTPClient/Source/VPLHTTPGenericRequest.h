@@ -13,6 +13,11 @@
 @private
   NSString * _requestMethod;
   NSString * _URLString;
+  
+  NSMutableDictionary * _requestHeaders;
+  
+  NSString * _username;
+  NSString * _password;
 }
 
 // ===== REQUEST METHOD ================================================================================================
