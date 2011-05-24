@@ -11,8 +11,6 @@
 		62492D2A13831AD10007D729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62492D2913831AD10007D729 /* Foundation.framework */; };
 		62492D3B13831FBD0007D729 /* VPLHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 62492D2C13831FBD0007D729 /* VPLHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62492D3C13831FBD0007D729 /* VPLHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 62492D2D13831FBD0007D729 /* VPLHTTPClient.m */; };
-		62492D3D13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 62492D2E13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62492D3E13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 62492D2F13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.m */; };
 		62492D3F13831FBD0007D729 /* VPLHTTPGenericRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 62492D3013831FBD0007D729 /* VPLHTTPGenericRequestHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62492D4013831FBD0007D729 /* VPLHTTPGenericRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 62492D3113831FBD0007D729 /* VPLHTTPGenericRequestHandler.m */; };
 		62492D4313831FBD0007D729 /* VPLHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 62492D3413831FBD0007D729 /* VPLHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,8 +33,6 @@
 		62492D2913831AD10007D729 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62492D2C13831FBD0007D729 /* VPLHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPClient.h; sourceTree = "<group>"; };
 		62492D2D13831FBD0007D729 /* VPLHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPClient.m; sourceTree = "<group>"; };
-		62492D2E13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPExplodingRequestHandler.h; sourceTree = "<group>"; };
-		62492D2F13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPExplodingRequestHandler.m; sourceTree = "<group>"; };
 		62492D3013831FBD0007D729 /* VPLHTTPGenericRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPGenericRequestHandler.h; sourceTree = "<group>"; };
 		62492D3113831FBD0007D729 /* VPLHTTPGenericRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPGenericRequestHandler.m; sourceTree = "<group>"; };
 		62492D3413831FBD0007D729 /* VPLHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPRequest.h; sourceTree = "<group>"; };
@@ -127,8 +123,6 @@
 				62492D3613831FBD0007D729 /* VPLHTTPRequestHandler.h */,
 				62492D2C13831FBD0007D729 /* VPLHTTPClient.h */,
 				62492D2D13831FBD0007D729 /* VPLHTTPClient.m */,
-				62492D2E13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.h */,
-				62492D2F13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.m */,
 				62492D3013831FBD0007D729 /* VPLHTTPGenericRequestHandler.h */,
 				62492D3113831FBD0007D729 /* VPLHTTPGenericRequestHandler.m */,
 			);
@@ -143,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				62492D3B13831FBD0007D729 /* VPLHTTPClient.h in Headers */,
-				62492D3D13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.h in Headers */,
 				62492D3F13831FBD0007D729 /* VPLHTTPGenericRequestHandler.h in Headers */,
 				62492D4313831FBD0007D729 /* VPLHTTPRequest.h in Headers */,
 				62492D4513831FBD0007D729 /* VPLHTTPRequestHandler.h in Headers */,
@@ -230,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				62492D3C13831FBD0007D729 /* VPLHTTPClient.m in Sources */,
-				62492D3E13831FBD0007D729 /* VPLHTTPExplodingRequestHandler.m in Sources */,
 				62492D4013831FBD0007D729 /* VPLHTTPGenericRequestHandler.m in Sources */,
 				62A29F11138B2B7C00598C6A /* VPLHTTPGenericRequest.m in Sources */,
 				62A29F16138B2B8F00598C6A /* VPLHTTPGenericResponse.m in Sources */,
