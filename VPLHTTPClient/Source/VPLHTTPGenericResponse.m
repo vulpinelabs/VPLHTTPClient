@@ -83,5 +83,11 @@ NSString * const VPLHTTPContentTypeHeader = @"Content-Type";
   return [response autorelease];
 }
 
++ (NSObject <VPLHTTPResponse> *)notFoundResponse
+{
+  return [[[self alloc] initWithResponseCode:404
+                                        body:[NSData data]
+                                 contentType:@"text/plain"] autorelease];
+}
 
 @end

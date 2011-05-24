@@ -23,7 +23,7 @@
 // ===== RESPONSE HELPERS ==============================================================================================
 
 /*!
- *  Returns a response with a 200 (Success) status code, and an empty text body.
+ *  Returns an empty 200 (Success) response.
  */
 + (NSObject <VPLHTTPResponse> *)response;
 
@@ -31,5 +31,10 @@
  *  Returns a response with a 200 (Success) status code, and the given XML in its body.
  */
 + (NSObject <VPLHTTPResponse> *)responseWithXML:(NSString *)xmlString;
+
+/*!
+ *  Returns an empty 404 (Not Found) response.
+ */
++ (NSObject <VPLHTTPResponse> *)notFoundResponse;
 
 @end
