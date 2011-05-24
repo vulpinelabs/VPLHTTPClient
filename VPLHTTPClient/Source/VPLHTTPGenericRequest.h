@@ -12,7 +12,7 @@
 @interface VPLHTTPGenericRequest : NSObject <VPLHTTPRequest> {
 @private
   NSString * _requestMethod;
-  NSString * _URLString;
+  NSString * _requestURLString;
   
   NSMutableDictionary * _requestHeaders;
   

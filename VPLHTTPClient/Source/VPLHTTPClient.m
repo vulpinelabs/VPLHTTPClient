@@ -63,7 +63,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
                   forURI:(NSString *)uriString
 {
   VPLHTTPGenericRequestHandler * handler = [[VPLHTTPGenericRequestHandler alloc] initWithResponse:response];
-  [handler setRequestPredicate:[NSPredicate predicateWithFormat:@"URLString = %@", uriString]];
+  [handler setRequestPredicate:[NSPredicate predicateWithFormat:@"requestURLString = %@", uriString]];
   
   @synchronized (self) {
     [VPLHTTPClientGlobalHandlers addObject:handler];

@@ -15,7 +15,7 @@
   self = [self init];
   if (self != nil) {
     
-    _URLString = [URLString retain];
+    _requestURLString = [URLString retain];
     _requestMethod = [@"GET" retain];
     
   }
@@ -24,7 +24,7 @@
 
 - (void)dealloc
 {
-  [_URLString release];
+  [_requestURLString release];
   [_requestMethod release];
   [_requestHeaders release];
   [_username release];
@@ -43,7 +43,7 @@
 #pragma mark -
 #pragma mark URL String
 
-@synthesize requestURLString=_URLString;
+@synthesize requestURLString=_requestURLString;
 
 - (NSURL *)requestURL
 {
