@@ -22,4 +22,9 @@
 
 @property (nonatomic, readonly, retain) NSString * responseContentType;
 
+- (BOOL)isXML;
+- (BOOL)isHTML;
+- (BOOL)isJSON;
+- (BOOL)isPlainText;
+
 @end

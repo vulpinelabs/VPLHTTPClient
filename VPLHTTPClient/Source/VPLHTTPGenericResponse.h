@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VPLHTTPResponse.h"
+#import "VPLHTTPResponseBase.h"
 
-@interface VPLHTTPGenericResponse : NSObject <VPLHTTPResponse> {
+@interface VPLHTTPGenericResponse : VPLHTTPResponseBase {
 @private
   NSUInteger _responseCode;
   NSData * _responseBody;

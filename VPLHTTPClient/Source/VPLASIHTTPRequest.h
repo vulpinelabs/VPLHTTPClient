@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "VPLHTTPRequest.h"
 #import "VPLHTTPResponse.h"
+#import "VPLHTTPResponseBase.h"
 
 @class ASIHTTPRequest;
 
-@interface VPLASIHTTPRequest : NSObject <VPLHTTPRequest,VPLHTTPResponse> {
+@interface VPLASIHTTPRequest : VPLHTTPResponseBase <VPLHTTPRequest,VPLHTTPResponse> {
 @private
   ASIHTTPRequest * _asiHttpRequest;
 }
