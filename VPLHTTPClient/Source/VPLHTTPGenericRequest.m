@@ -43,12 +43,12 @@
 #pragma mark -
 #pragma mark URL String
 
-@synthesize URLString=_URLString;
+@synthesize requestURLString=_URLString;
 
-- (NSURL *)URL
+- (NSURL *)requestURL
 {
-  if (self.URLString != nil) {
-    return [NSURL URLWithString:self.URLString];
+  if (self.requestURLString != nil) {
+    return [NSURL URLWithString:self.requestURLString];
   } else {
     return nil;
   }

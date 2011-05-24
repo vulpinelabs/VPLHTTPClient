@@ -12,14 +12,14 @@
 
 // ===== STATUS CODE ===================================================================================================
 
-@property (nonatomic, assign) NSUInteger responseCode;
+@property (nonatomic, readonly, assign) NSUInteger responseCode;
 
 // ===== BODY ==========================================================================================================
 
-@property (nonatomic, retain) NSData * responseBody;
+@property (nonatomic, readonly, retain) NSData * responseBody;
 
 // ===== CONTENT TYPE ==================================================================================================
 
-@property (nonatomic, retain) NSString * responseContentType;
+@property (nonatomic, readonly, retain) NSString * responseContentType;
 
 @end

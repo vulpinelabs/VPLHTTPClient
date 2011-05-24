@@ -26,7 +26,6 @@
 
 // ===== URL STRING ====================================================================================================
 
-@property (nonatomic,retain) NSString * URLString;
-- (NSURL *)URL;
+@property (nonatomic,retain) NSString * requestURLString;
 
 @end

@@ -16,9 +16,9 @@
 
 // ===== URL STRING ====================================================================================================
 
-@property (nonatomic,readonly,retain) NSString * URLString;
+@property (nonatomic,readonly,retain) NSString * requestURLString;
 
-- (NSURL *)URL;
+- (NSURL *)requestURL;
 
 // ===== HEADERS =======================================================================================================
 

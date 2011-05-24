@@ -9,7 +9,7 @@ describe "VPLHTTPGenericRequest" do
     end
     
     it "should initialize the #URLString and default #requestMethod to 'GET'" do
-      @request.URLString.should == 'http://localhost.localdomain/'
+      @request.requestURLString.should == 'http://localhost.localdomain/'
       @request.requestMethod.should == 'GET'
     end
     
@@ -17,11 +17,11 @@ describe "VPLHTTPGenericRequest" do
   
   # ===== URL ==========================================================================================================
   
-  describe "#URL" do
+  describe "#requestURL" do
     
     it "should return an NSURL representing the request's URL" do
       @request = VPLHTTPGenericRequest.alloc.initWithURLString('http://localhost.localdomain/')
-      @request.URL.isEqual(NSURL.URLWithString('http://localhost.localdomain/')).should == true
+      @request.requestURL.isEqual(NSURL.URLWithString('http://localhost.localdomain/')).should == true
     end
     
   end

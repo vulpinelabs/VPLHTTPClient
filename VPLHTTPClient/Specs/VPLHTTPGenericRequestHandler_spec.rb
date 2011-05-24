@@ -27,7 +27,7 @@ describe "VPLHTTPGenericRequestHandler" do
     describe "when a #requestPredicate exists" do
       
       before(:each) do
-        @predicate = NSPredicate.predicateWithFormat("URLString == %@", @request.URLString)
+        @predicate = NSPredicate.predicateWithFormat("requestURLString == %@", @request.requestURLString)
         @handler.requestPredicate = @predicate
       end
       

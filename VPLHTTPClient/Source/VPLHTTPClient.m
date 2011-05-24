@@ -124,7 +124,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   } else {
     
     [NSException raise:@"VPLHTTPClientNetworkRequestsDisabledError"
-                format:@"Network requests are disabled: %@", [request URLString]];
+                format:@"Network requests are disabled: %@", [request requestURLString]];
     
   }
 }
