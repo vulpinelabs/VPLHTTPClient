@@ -24,7 +24,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 {
   self = [super init];
   if (self) {
-    _requestHandlers = [[NSMutableArray alloc] initWithCapacity:8];
+    
   }
   
   return self;
@@ -32,7 +32,6 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 
 - (void)dealloc
 {
-  [_requestHandlers release];
   [super dealloc];
 }
 
@@ -54,7 +53,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
 }
 
-+ (void)registerResponse:(VPLHTTPResponse *)response
++ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
                   forURI:(NSString *)uriString
 {
   VPLHTTPGenericRequestHandler * handler = [[VPLHTTPGenericRequestHandler alloc] initWithResponse:response];
@@ -74,73 +73,30 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
 }
 
-// ===== REQUEST HANDLERS ==============================================================================================
-#pragma mark -
-#pragma mark Request Handlers
-
-- (BOOL)isRequestHandlerRegistered:(NSObject<VPLHTTPRequestHandler> *)handler
-{
-  return [_requestHandlers containsObject:handler];
-}
-
-- (void)prependRequestHandler:(NSObject<VPLHTTPRequestHandler> *)handler
-{
-  if ([self isRequestHandlerRegistered:handler]) [_requestHandlers removeObject:handler];
-  
-  [_requestHandlers insertObject:handler
-                         atIndex:0];
-}
-
-- (void)appendRequestHandler:(NSObject<VPLHTTPRequestHandler> *)handler
-{
-  if ([self isRequestHandlerRegistered:handler]) [_requestHandlers removeObject:handler];
-  [_requestHandlers addObject:handler];
-}
-
-- (void)removeRequestHandler:(NSObject<VPLHTTPRequestHandler> *)handler
-{
-  [_requestHandlers removeObject:handler];
-}
-
 // ===== REQUEST DISPATCH ==============================================================================================
 #pragma mark -
 #pragma mark Request Dispatch
 
-- (BOOL)canPerformRequest:(VPLHTTPRequest *)request
+- (BOOL)canPerformRequest:(NSObject <VPLHTTPRequest> *)request
 {
-  for (NSObject<VPLHTTPRequestHandler> * handler in _requestHandlers) {
-    
-    if ([handler canPerformRequest:request]) return YES;
-    
-  }
-  
   NSMutableArray * globalHandlers = nil;
   @synchronized ([self class]) {
     globalHandlers = [VPLHTTPClientGlobalHandlers copy];
   }
   
-  for (NSObject<VPLHTTPRequestHandler> * handler in _requestHandlers) {
+  for (NSObject<VPLHTTPRequestHandler> * handler in globalHandlers) {
     if ([handler canPerformRequest:request]) return YES;
   }
   
   [globalHandlers release];
   
-  return [super canPerformRequest:request];
+  return NO;
 }
 
-- (void)performRequest:(VPLHTTPRequest *)request
+- (void)performRequest:(NSObject <VPLHTTPRequest> *)request
                success:(VPLHTTPSuccessCallback)successCallback
                  error:(VPLHTTPErrorCallback)errorCallback
 {
-  for (NSObject<VPLHTTPRequestHandler> * handler in _requestHandlers) {
-    if ([handler canPerformRequest:request]) {
-      [handler performRequest:request
-                      success:successCallback
-                        error:errorCallback];
-      return;
-    }
-  }
-  
   NSMutableArray * globalHandlers = nil;
   @synchronized ([self class]) {
     globalHandlers = [VPLHTTPClientGlobalHandlers copy];
@@ -160,9 +116,10 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   
   if ([[self class] networkRequestsEnabled]) {
     
-    [super performRequest:request
-                  success:successCallback
-                    error:errorCallback];
+    NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
+                                          code:VPLHTTPRequestNotPerformedError
+                                      userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
+    errorCallback(error);
     
   } else {
     

@@ -7,20 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VPLHTTPRequestHandlerBase.h"
+#import "VPLHTTPRequestHandler.h"
 
 /*!
  *  A VPLHTTPRequestHandler implementation that returns immediately with a pre-provided NSError or VPLHTTPResponse object.
  */
-@interface VPLHTTPGenericRequestHandler : VPLHTTPRequestHandlerBase {
+@interface VPLHTTPGenericRequestHandler : NSObject <VPLHTTPRequestHandler> {
 @private
   NSPredicate * _requestPredicate;
-  
-  VPLHTTPResponse * _response;
+  NSObject <VPLHTTPResponse> * _response;
   NSError * _error;
 }
 
-- (id)initWithResponse:(VPLHTTPResponse *)response;
+- (id)initWithResponse:(NSObject <VPLHTTPResponse> *)response;
 - (id)initWithError:(NSError *)error;
 
 // ===== REQUEST PREDICATE =============================================================================================
@@ -29,7 +28,7 @@
 
 // ===== RESPONSE ======================================================================================================
 
-@property (nonatomic,retain) VPLHTTPResponse * response;
+@property (nonatomic,retain) NSObject <VPLHTTPResponse> * response;
 
 // ===== ERROR =========================================================================================================
 

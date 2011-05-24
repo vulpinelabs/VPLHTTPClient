@@ -1,14 +1,15 @@
 //
-//  VPLHTTPRequest.m
-//  TrackerCore
+//  VPLHTTPGenericRequest.m
+//  VPLHTTPClient
 //
-//  Created by Christian Niles on 5/13/11.
-//  Copyright 2011 Vulpine Labs LLC. All rights reserved.
+//  Created by Christian Niles on 5/23/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "VPLHTTPRequest.h"
+#import "VPLHTTPGenericRequest.h"
 
-@implementation VPLHTTPRequest
+
+@implementation VPLHTTPGenericRequest
 
 - (id)initWithURLString:(NSString *)URLString
 {

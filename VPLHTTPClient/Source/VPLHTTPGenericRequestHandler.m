@@ -12,7 +12,7 @@
 
 @implementation VPLHTTPGenericRequestHandler
 
-- (id)initWithResponse:(VPLHTTPResponse *)response
+- (id)initWithResponse:(NSObject <VPLHTTPResponse> *)response
 {
   self = [self init];
   if (self) {
@@ -60,7 +60,7 @@
 #pragma mark -
 #pragma mark TKRequestHandler Methods
 
-- (BOOL)canPerformRequest:(VPLHTTPRequest *)request
+- (BOOL)canPerformRequest:(NSObject <VPLHTTPResponse> *)request
 {
   if (self.response != nil || self.error != nil) {
     
@@ -73,7 +73,7 @@
   }
 }
 
-- (void)performRequest:(VPLHTTPRequest *)request
+- (void)performRequest:(NSObject <VPLHTTPRequest> *)request
                success:(VPLHTTPSuccessCallback)successCallback
                  error:(VPLHTTPErrorCallback)errorCallback
 {
@@ -87,9 +87,10 @@
   
   } else {
     
-    [super performRequest:request
-                  success:successCallback
-                    error:errorCallback];
+    NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
+                                          code:VPLHTTPRequestNotPerformedError
+                                      userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
+    errorCallback(error);
     
   }
 }

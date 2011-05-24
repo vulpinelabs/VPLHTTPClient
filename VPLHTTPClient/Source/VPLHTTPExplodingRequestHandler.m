@@ -11,12 +11,12 @@
 
 @implementation VPLHTTPExplodingRequestHandler
 
-- (BOOL)canPerformRequest:(VPLHTTPRequest *)request
+- (BOOL)canPerformRequest:(NSObject <VPLHTTPRequest> *)request
 {
   return YES;
 }
 
-- (void)performRequest:(VPLHTTPRequest *)request
+- (void)performRequest:(NSObject <VPLHTTPRequest> *)request
                success:(VPLHTTPSuccessCallback)successCallback
                  error:(VPLHTTPErrorCallback)errorCallback
 {

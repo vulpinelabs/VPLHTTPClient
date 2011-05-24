@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class VPLHTTPRequest;
-@class VPLHTTPResponse;
+#import "VPLHTTPRequest.h"
+#import "VPLHTTPResponse.h"
 
 //! The NSError domain provided to VPLHTTPErrorCallback blocks
 #define VPLHTTPErrorDomain @"VPLHTTPErrorDomain"
@@ -25,7 +24,7 @@ typedef enum _VPLHTTPErrorCode {
   
 } VPLHTTPErrorCode;
 
-typedef void(^VPLHTTPSuccessCallback)(VPLHTTPResponse *);
+typedef void(^VPLHTTPSuccessCallback)(NSObject <VPLHTTPResponse> *);
 typedef void(^VPLHTTPErrorCallback)(NSError *);
 
 /*!
@@ -36,7 +35,7 @@ typedef void(^VPLHTTPErrorCallback)(NSError *);
 /*!
  *  Determines whether the implementation can perform the given request or not.
  */
-- (BOOL)canPerformRequest:(VPLHTTPRequest *)request;
+- (BOOL)canPerformRequest:(NSObject <VPLHTTPRequest> *)request;
 
 /*!
  *  Performs the given request asynchronously and invokes the successCallback when the request is successful, or the
@@ -47,7 +46,7 @@ typedef void(^VPLHTTPErrorCallback)(NSError *);
  *  NSError within the VPLHTTPErrorDomain, and an error code of VPLHTTPRequestNotPerformedError. The #canPerformRequest:
  *  method allows callers to detect this case before invoking this method.
  */
-- (void)performRequest:(VPLHTTPRequest *)request
+- (void)performRequest:(NSObject <VPLHTTPRequest> *)request
                success:(VPLHTTPSuccessCallback)successCallback
                  error:(VPLHTTPErrorCallback)errorCallback;
 

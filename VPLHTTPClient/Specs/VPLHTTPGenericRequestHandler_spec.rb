@@ -6,9 +6,9 @@ describe "VPLHTTPGenericRequestHandler" do
     
     before(:each) do
       @handler = VPLHTTPGenericRequestHandler.alloc.init
-      @handler.response = VPLHTTPResponse.response
+      @handler.response = VPLHTTPGenericResponse.response
       
-      @request = VPLHTTPRequest.alloc.initWithURLString("http://www.example.com/path/to/resource")
+      @request = VPLHTTPGenericRequest.alloc.initWithURLString("http://www.example.com/path/to/resource")
     end
     
     describe "when #requestPredicate is nil" do

@@ -7,23 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VPLHTTPMessage.h"
 
-@interface VPLHTTPRequest : VPLHTTPMessage {
-@private
-  NSString * _requestMethod;
-  NSString * _URLString;
-}
-
-- (id)initWithURLString:(NSString *)URLString;
+@protocol VPLHTTPRequest <NSObject>
 
 // ===== REQUEST METHOD ================================================================================================
 
-@property (nonatomic,retain) NSString * requestMethod;
+@property (nonatomic,readonly,retain) NSString * requestMethod;
 
 // ===== URL STRING ====================================================================================================
 
-@property (nonatomic,retain) NSString * URLString;
+@property (nonatomic,readonly,retain) NSString * URLString;
+
 - (NSURL *)URL;
 
 @end
