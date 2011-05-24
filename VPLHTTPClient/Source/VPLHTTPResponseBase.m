@@ -11,6 +11,27 @@
 
 @implementation VPLHTTPResponseBase
 
+- (NSUInteger)responseCode
+{
+  [NSException raise:@"NotImplementedError"
+              format:@"VPLHTTPResponseBase#responseCode is abstract and should be overridden"];
+  return 0;
+}
+
+- (NSString *)responseContentType
+{
+  [NSException raise:@"NotImplementedError"
+              format:@"VPLHTTPResponseBase#responseContentType is abstract and should be overridden"];
+  return nil;
+}
+
+- (NSData *)responseBody
+{
+  [NSException raise:@"NotImplementedError"
+              format:@"VPLHTTPResponseBase#responseBody is abstract and should be overridden"];
+  return nil;
+}
+
 // ===== CONTENT TYPE ==================================================================================================
 #pragma mark -
 #pragma mark Content Type

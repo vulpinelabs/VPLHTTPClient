@@ -7,7 +7,6 @@
 //
 
 #import "VPLASIHTTPRequest.h"
-#import "VPLASIHTTPRequest+Protected.h"
 #import "ASIHTTPRequest.h"
 
 @implementation VPLASIHTTPRequest
@@ -96,33 +95,6 @@
 {
   [[self _httpRequest] setUsername:username];
   [[self _httpRequest] setPassword:password];
-}
-
-// ===== RESPONSE STATUS CODE ==========================================================================================
-#pragma mark -
-#pragma mark Status Code
-
-- (NSUInteger)responseCode
-{
-  return [[self _httpRequest] responseStatusCode];
-}
-
-// ===== RESPONSE BODY =================================================================================================
-#pragma mark -
-#pragma mark Response Body
-
-- (NSData *)responseBody
-{
-  return [[self _httpRequest] responseData];
-}
-
-// ===== RESPONSE CONTENT TYPE =========================================================================================
-#pragma mark -
-#pragma mark Response Content Type
-
-- (NSString *)responseContentType
-{
-  return [[[self _httpRequest] responseHeaders] objectForKey:@"Content-Type"];
 }
 
 @end

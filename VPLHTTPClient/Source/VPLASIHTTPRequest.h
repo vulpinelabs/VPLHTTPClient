@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "VPLHTTPRequest.h"
-#import "VPLHTTPResponse.h"
-#import "VPLHTTPResponseBase.h"
 
 @class ASIHTTPRequest;
 
-@interface VPLASIHTTPRequest : VPLHTTPResponseBase <VPLHTTPRequest,VPLHTTPResponse> {
+@interface VPLASIHTTPRequest : NSObject <VPLHTTPRequest> {
 @private
   ASIHTTPRequest * _asiHttpRequest;
 }
 
 - (id)initWithURL:(NSURL *)requestURL;
 - (id)initWithURLString:(NSString *)requestURLString;
+
+- (ASIHTTPRequest *)_httpRequest;
 
 @end

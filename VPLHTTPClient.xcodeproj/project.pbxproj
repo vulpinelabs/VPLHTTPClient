@@ -43,9 +43,10 @@
 		62A29F51138B40B200598C6A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A29F50138B40B100598C6A /* CoreServices.framework */; };
 		62A29F5B138B414C00598C6A /* VPLASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A29F5C138B414D00598C6A /* VPLASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */; };
-		62A29F5E138B50A500598C6A /* VPLASIHTTPRequest+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */; };
 		62A29F92138C23BB00598C6A /* VPLHTTPResponseBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F90138C23BA00598C6A /* VPLHTTPResponseBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A29F93138C23BB00598C6A /* VPLHTTPResponseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F91138C23BA00598C6A /* VPLHTTPResponseBase.m */; };
+		62A29F96138C635600598C6A /* VPLASIHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F94138C635400598C6A /* VPLASIHTTPResponse.h */; };
+		62A29F97138C635600598C6A /* VPLASIHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F95138C635500598C6A /* VPLASIHTTPResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,9 +89,10 @@
 		62A29F50138B40B100598C6A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLASIHTTPRequest.h; sourceTree = "<group>"; };
 		62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLASIHTTPRequest.m; sourceTree = "<group>"; };
-		62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VPLASIHTTPRequest+Protected.h"; sourceTree = "<group>"; };
 		62A29F90138C23BA00598C6A /* VPLHTTPResponseBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPResponseBase.h; sourceTree = "<group>"; };
 		62A29F91138C23BA00598C6A /* VPLHTTPResponseBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPResponseBase.m; sourceTree = "<group>"; };
+		62A29F94138C635400598C6A /* VPLASIHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLASIHTTPResponse.h; sourceTree = "<group>"; };
+		62A29F95138C635500598C6A /* VPLASIHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLASIHTTPResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +175,9 @@
 				62492D3013831FBD0007D729 /* VPLHTTPGenericRequestHandler.h */,
 				62492D3113831FBD0007D729 /* VPLHTTPGenericRequestHandler.m */,
 				62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */,
-				62A29F5D138B50A500598C6A /* VPLASIHTTPRequest+Protected.h */,
 				62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */,
+				62A29F94138C635400598C6A /* VPLASIHTTPResponse.h */,
+				62A29F95138C635500598C6A /* VPLASIHTTPResponse.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -239,7 +242,7 @@
 				62A29F43138B3FD800598C6A /* ASIInputStream.h in Headers */,
 				62A29F45138B3FD800598C6A /* ASINetworkQueue.h in Headers */,
 				62A29F47138B3FD800598C6A /* ASIProgressDelegate.h in Headers */,
-				62A29F5E138B50A500598C6A /* VPLASIHTTPRequest+Protected.h in Headers */,
+				62A29F96138C635600598C6A /* VPLASIHTTPResponse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +335,7 @@
 				62A29F46138B3FD800598C6A /* ASINetworkQueue.m in Sources */,
 				62A29F5C138B414D00598C6A /* VPLASIHTTPRequest.m in Sources */,
 				62A29F93138C23BB00598C6A /* VPLHTTPResponseBase.m in Sources */,
+				62A29F97138C635600598C6A /* VPLASIHTTPResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

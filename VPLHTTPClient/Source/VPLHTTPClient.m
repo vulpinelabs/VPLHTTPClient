@@ -10,7 +10,7 @@
 #import "VPLHTTPRequest.h"
 #import "VPLHTTPGenericRequestHandler.h"
 #import "VPLASIHTTPRequest.h"
-#import "VPLASIHTTPRequest+Protected.h"
+#import "VPLASIHTTPResponse.h"
 #import "ASIHTTPRequest.h"
 
 static BOOL TKNetworkRequestsEnabled = YES;
@@ -148,8 +148,20 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
     
     if ([request isKindOfClass:[VPLASIHTTPRequest class]]) {
       
+      __block ASIHTTPRequest * asiRequest = [(VPLASIHTTPRequest *)request _httpRequest];
+      [asiRequest setCompletionBlock:^(void) {
+        
+        successCallback([VPLASIHTTPResponse responseWithRequest:asiRequest]);
+        
+      }];
+      [asiRequest setFailedBlock:^(void) {
+        
+        errorCallback([VPLASIHTTPResponse errorWithASIError:asiRequest]);
+        
+      }];
+      
       // add the request
-      [_requestQueue addOperation:[(VPLASIHTTPRequest *)request _httpRequest]];
+      [_requestQueue addOperation:asiRequest];
       
     } else {
       

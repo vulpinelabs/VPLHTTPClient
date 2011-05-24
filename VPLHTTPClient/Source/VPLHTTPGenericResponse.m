@@ -40,19 +40,28 @@ NSString * const VPLHTTPContentTypeHeader = @"Content-Type";
 #pragma mark -
 #pragma mark Status Code
 
-@synthesize responseCode=_responseCode;
+- (NSUInteger)responseCode
+{
+  return _responseCode;
+}
 
 // ===== BODY ==========================================================================================================
 #pragma mark -
 #pragma mark Body
 
-@synthesize responseBody=_responseBody;
+- (NSData *)responseBody
+{
+  return _responseBody;
+}
 
 // ===== CONTENT TYPE ==================================================================================================
 #pragma mark -
 #pragma mark Content-Type
 
-@synthesize responseContentType=_responseContentType;
+- (NSString *)responseContentType
+{
+  return _responseContentType;
+}
 
 // ===== RESPONSE HELPERS ==============================================================================================
 #pragma mark -
