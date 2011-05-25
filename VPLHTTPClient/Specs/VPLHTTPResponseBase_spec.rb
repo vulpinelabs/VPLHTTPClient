@@ -97,4 +97,19 @@ describe "VPLHTTPResponseBase" do
     
   end
   
+  # ===== RESPONSE BODY ================================================================================================
+  
+  describe "#responseString" do
+    
+    before(:each) do
+      @xml = "<?xml version='1.0' encoding='utf8' ?><description />"
+      @response = VPLHTTPGenericResponse.responseWithXML(@xml)
+    end
+    
+    it "should return a string constructed by interpreting the #responseBody with the #responseEncoding" do
+      @response.responseString.should == @xml
+    end
+    
+  end
+  
 end
