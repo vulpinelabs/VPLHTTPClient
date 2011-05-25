@@ -13,6 +13,7 @@
 // ===== STATUS CODE ===================================================================================================
 
 @property (nonatomic, readonly, assign) NSUInteger responseCode;
+@property (nonatomic, readonly, retain) NSString * responseStatusMessage;
 
 // ===== BODY ==========================================================================================================
 

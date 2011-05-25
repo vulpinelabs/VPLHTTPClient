@@ -60,6 +60,16 @@
   return [[self _httpRequest] responseStatusCode];
 }
 
+- (NSString *)responseStatusMessage
+{
+  NSString * statusMessage = [[self _httpRequest] responseStatusMessage];
+  if (statusMessage == nil) {
+    return [super responseStatusMessage];
+  } else {
+    return statusMessage;
+  }
+}
+
 // ===== RESPONSE BODY =================================================================================================
 #pragma mark -
 #pragma mark Response Body

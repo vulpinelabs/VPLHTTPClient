@@ -14,6 +14,8 @@
     
 }
 
++ (NSString *)defaultResponseStatusMessageForCode:(NSUInteger)responseCode;
+
 // ===== CONTENT TYPE HELPERS ==========================================================================================
 
 + (BOOL)isXMLContentType:(NSString *)contentType;
