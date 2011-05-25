@@ -11,25 +11,15 @@
 
 @implementation VPLHTTPResponseBase
 
+// ===== RESPONSE CODE =================================================================================================
+#pragma mark -
+#pragma mark Response Code
+
 - (NSUInteger)responseCode
 {
   [NSException raise:@"NotImplementedError"
               format:@"VPLHTTPResponseBase#responseCode is abstract and should be overridden"];
   return 0;
-}
-
-- (NSString *)responseContentType
-{
-  [NSException raise:@"NotImplementedError"
-              format:@"VPLHTTPResponseBase#responseContentType is abstract and should be overridden"];
-  return nil;
-}
-
-- (NSData *)responseBody
-{
-  [NSException raise:@"NotImplementedError"
-              format:@"VPLHTTPResponseBase#responseBody is abstract and should be overridden"];
-  return nil;
 }
 
 // ===== CONTENT TYPE ==================================================================================================
@@ -46,6 +36,29 @@
                 fromContentType:contentType];
   
   return mimeType;
+}
+
+- (NSString *)responseContentType
+{
+  [NSException raise:@"NotImplementedError"
+              format:@"VPLHTTPResponseBase#responseContentType is abstract and should be overridden"];
+  return nil;
+}
+
+- (NSStringEncoding)responseEncoding
+{
+  NSString * mimeType = nil;
+  NSStringEncoding stringEncoding = 0;
+  
+  [ASIHTTPRequest parseMimeType:&mimeType
+            andResponseEncoding:&stringEncoding
+                fromContentType:[self responseContentType]];
+  
+  if (stringEncoding == 0) {
+    stringEncoding = NSISOLatin1StringEncoding;
+  }
+  
+  return stringEncoding;
 }
 
 // ----- XML -----------------------------------------------------------------------------------------------------------
@@ -139,6 +152,32 @@
 - (BOOL)isPlainText
 {
   return [[self class] isPlainTextContentType:[self responseContentType]];
+}
+
+// ===== RESPONSE BODY =================================================================================================
+#pragma mark -
+#pragma mark Response Body
+
+- (NSData *)responseBody
+{
+  [NSException raise:@"NotImplementedError"
+              format:@"VPLHTTPResponseBase#responseBody is abstract and should be overridden"];
+  return nil;
+}
+
+- (NSString *)responseString
+{
+  NSData * responseBody = [self responseBody];
+  if (responseBody != nil) {
+    
+    return [[[NSString alloc] initWithData:responseBody
+                                  encoding:[self responseEncoding]] autorelease];
+    
+  } else {
+    
+    return nil;
+    
+  }
 }
 
 @end

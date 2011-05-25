@@ -17,10 +17,12 @@
 // ===== BODY ==========================================================================================================
 
 @property (nonatomic, readonly, retain) NSData * responseBody;
+@property (nonatomic, readonly, retain) NSString * responseString;
 
 // ===== CONTENT TYPE ==================================================================================================
 
 @property (nonatomic, readonly, retain) NSString * responseContentType;
+@property (nonatomic, readonly, assign) NSStringEncoding responseEncoding;
 
 - (BOOL)isXML;
 - (BOOL)isHTML;
