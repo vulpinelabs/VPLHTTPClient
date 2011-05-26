@@ -8,6 +8,7 @@
 
 #import "VPLASIHTTPResponse.h"
 #import "ASIHTTPRequest.h"
+#import "VPLHTTPErrors.h"
 
 @implementation VPLASIHTTPResponse
 
@@ -45,10 +46,55 @@
 #pragma mark -
 #pragma mark Error Handling
 
-+ (NSError *)errorWithASIError:(ASIHTTPRequest *)requestInError
++ (NSError *)errorWithASIError:(NSError *)asiHttpError
 {
-  // For now don't convert the error, but eventually it should be mapped to a common error domain
-  return [requestInError error];
+  if ([[asiHttpError domain] isEqualToString:NetworkRequestErrorDomain]) {
+    
+    // an A
+    VPLHTTPErrorCode errorCode = VPLHTTPRequestInternalError;
+    
+    switch ([asiHttpError code]) {
+      case ASIConnectionFailureErrorType:
+        errorCode = VPLHTTPRequestConnectionFailedError;
+        break;
+        
+      case ASIRequestTimedOutErrorType:
+        errorCode = VPLHTTPRequestTimedOutError;
+        break;
+        
+      case ASIAuthenticationErrorType:
+        errorCode = VPLHTTPRequestAccessDeniedError;
+        break;
+        
+      case ASIRequestCancelledErrorType:
+        errorCode = VPLHTTPRequestCancelledError;
+        break;
+        
+      case ASITooMuchRedirectionErrorType:
+        errorCode = VPLHTTPRequestTooMuchRedirectionError;
+        break;
+        
+      case ASIUnableToCreateRequestErrorType:
+      case ASIInternalErrorWhileBuildingRequestType:
+      case ASIInternalErrorWhileApplyingCredentialsType:
+      case ASIFileManagementError:
+      case ASIUnhandledExceptionError:
+      case ASICompressionError:
+        break;
+        
+    }    
+    
+    return [NSError errorWithDomain:VPLHTTPErrorDomain
+                               code:errorCode
+                           userInfo:[NSDictionary dictionaryWithObject:asiHttpError
+                                                                forKey:NSUnderlyingErrorKey]];
+    
+  } else {
+    
+    // a lower-level error is being returned...
+    return asiHttpError;
+    
+  }
 }
 
 // ===== RESPONSE STATUS CODE ==========================================================================================

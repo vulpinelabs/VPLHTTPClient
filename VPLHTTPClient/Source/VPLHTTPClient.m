@@ -157,7 +157,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
       }];
       [asiRequest setFailedBlock:^(void) {
         
-        errorCallback([VPLASIHTTPResponse errorWithASIError:asiRequest]);
+        errorCallback([VPLASIHTTPResponse errorWithASIError:asiRequest.error]);
         
       }];
       

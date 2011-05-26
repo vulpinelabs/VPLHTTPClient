@@ -25,6 +25,6 @@
 
 // ===== ERROR =========================================================================================================
 
-+ (NSError *)errorWithASIError:(ASIHTTPRequest *)requestInError;
++ (NSError *)errorWithASIError:(NSError *)requestInError;
 
 @end

@@ -20,4 +20,22 @@ typedef enum _VPLHTTPErrorCode {
   //! When performing a VPLHTTPRequest was not performed due to local security constraints or other rules.
   VPLHTTPRequestNotAllowedError,
   
+  //! A VPLHTTPRequest was cancelled.
+  VPLHTTPRequestCancelledError,
+  
+  //! A connection to the server couldn't be made, either because the server is down, or no internet connection exists.
+  VPLHTTPRequestConnectionFailedError,
+  
+  //! A connection was established, but the server took too long to respond.
+  VPLHTTPRequestTimedOutError,
+  
+  //! Authentication is required, or the provided credentials weren't accepted.
+  VPLHTTPRequestAccessDeniedError,
+  
+  //! The server sent too many redirects in a row.
+  VPLHTTPRequestTooMuchRedirectionError,
+  
+  //! An internal programming error ocurred, like a memory error or assertion failure.
+  VPLHTTPRequestInternalError
+  
 } VPLHTTPErrorCode;
