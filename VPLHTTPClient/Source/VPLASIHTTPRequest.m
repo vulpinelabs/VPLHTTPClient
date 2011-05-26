@@ -16,6 +16,8 @@
   self = [self init];
   if (self) {
     _asiHttpRequest = [[ASIHTTPRequest alloc] initWithURL:requestURL];
+    [_asiHttpRequest setUseKeychainPersistence:NO];
+    [_asiHttpRequest setUseSessionPersistence:NO];
   }
   
   return self;
