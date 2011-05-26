@@ -10,20 +10,6 @@
 #import "VPLHTTPRequest.h"
 #import "VPLHTTPResponse.h"
 
-//! The NSError domain provided to VPLHTTPErrorCallback blocks
-#define VPLHTTPErrorDomain @"VPLHTTPErrorDomain"
-
-//! The NSError codes provided to VPLHTTPErrorCallback blocks
-typedef enum _VPLHTTPErrorCode {
-  
-  //! When a VPLHTTPRequest was not performed, because no VPLHTTPRequestHandler implementations support it
-  VPLHTTPRequestNotPerformedError = 1,
-  
-  //! When performing a VPLHTTPRequest was not performed due to local security constraints or other rules.
-  VPLHTTPRequestNotAllowedError,
-  
-} VPLHTTPErrorCode;
-
 typedef void(^VPLHTTPSuccessCallback)(NSObject <VPLHTTPResponse> *);
 typedef void(^VPLHTTPErrorCallback)(NSError *);
 

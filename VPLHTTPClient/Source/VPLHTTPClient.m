@@ -7,6 +7,7 @@
 //
 
 #import "VPLHTTPClient.h"
+#import "VPLHTTPErrors.h"
 #import "VPLHTTPRequest.h"
 #import "VPLHTTPGenericRequestHandler.h"
 #import "VPLASIHTTPRequest.h"
