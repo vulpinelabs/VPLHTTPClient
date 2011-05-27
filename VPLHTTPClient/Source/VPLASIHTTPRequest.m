@@ -68,7 +68,13 @@
 
 - (NSDictionary *)requestHeaders
 {
-  return [self _httpRequest].requestHeaders;
+  NSDictionary * requestHeaders = [self _httpRequest].requestHeaders;
+  if (requestHeaders == nil) {
+    
+    requestHeaders = [NSDictionary dictionary];
+    
+  }
+  return requestHeaders;
 }
 
 - (void)addRequestHeader:(NSString *)headerName
