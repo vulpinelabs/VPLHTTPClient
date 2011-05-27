@@ -51,7 +51,7 @@
   if ([[asiHttpError domain] isEqualToString:NetworkRequestErrorDomain]) {
     
     // an A
-    VPLHTTPErrorCode errorCode = VPLHTTPRequestInternalError;
+    VPLHTTPErrorCode errorCode;
     
     switch ([asiHttpError code]) {
       case ASIConnectionFailureErrorType:
@@ -80,6 +80,8 @@
       case ASIFileManagementError:
       case ASIUnhandledExceptionError:
       case ASICompressionError:
+      default:
+        errorCode = VPLHTTPRequestInternalError;
         break;
         
     }    
