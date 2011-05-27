@@ -61,7 +61,7 @@
 #pragma mark -
 #pragma mark TKRequestHandler Methods
 
-- (BOOL)canPerformRequest:(NSObject <VPLHTTPResponse> *)request
+- (BOOL)canPerformRequest:(NSObject <VPLHTTPRequest> *)request
 {
   if (self.response != nil || self.error != nil) {
     
