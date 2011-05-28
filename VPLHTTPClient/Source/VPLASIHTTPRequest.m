@@ -13,11 +13,19 @@
 
 - (id)initWithURL:(NSURL *)requestURL
 {
+  return [self initWithURL:requestURL method:@"GET"];
+}
+
+- (id)initWithURL:(NSURL *)requestURL
+           method:(NSString *)requestMethod
+{
   self = [self init];
+  
   if (self) {
     _asiHttpRequest = [[ASIHTTPRequest alloc] initWithURL:requestURL];
     [_asiHttpRequest setUseKeychainPersistence:NO];
     [_asiHttpRequest setUseSessionPersistence:NO];
+    [_asiHttpRequest setRequestMethod:requestMethod];
   }
   
   return self;
@@ -26,6 +34,13 @@
 - (id)initWithURLString:(NSString *)requestURLString
 {
   return [self initWithURL:[NSURL URLWithString:requestURLString]];
+}
+
+- (id)initWithURLString:(NSString *)requestURLString
+                 method:(NSString *)requestMethod
+{
+  return [self initWithURL:[NSURL URLWithString:requestURLString]
+                    method:requestMethod];
 }
 
 - (void)dealloc

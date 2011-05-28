@@ -57,6 +57,9 @@
 
 // ===== REQUESTS ======================================================================================================
 
-- (NSObject <VPLHTTPRequest> *)GETRequestWithURLString:(NSString *)url;
+- (NSObject <VPLHTTPRequest> *)prepareGETRequestForURLString:(NSString *)url;
+
+- (NSObject <VPLHTTPRequest> *)prepareRequestForURLString:(NSString *)url
+                                               withMethod:(NSString *)requestMethod;
 
 @end

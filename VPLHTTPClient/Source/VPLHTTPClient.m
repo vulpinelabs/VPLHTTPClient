@@ -105,9 +105,16 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 #pragma mark -
 #pragma mark Requests
 
-- (NSObject <VPLHTTPRequest> *)GETRequestWithURLString:(NSString *)url
+- (NSObject <VPLHTTPRequest> *)prepareGETRequestForURLString:(NSString *)url
 {
-  return [[[VPLASIHTTPRequest alloc] initWithURLString:url] autorelease];
+  return [self prepareRequestForURLString:url
+                               withMethod:@"GET"];
+}
+
+- (NSObject <VPLHTTPRequest> *)prepareRequestForURLString:(NSString *)url
+                                               withMethod:(NSString *)requestMethod
+{
+  return [[[VPLASIHTTPRequest alloc] initWithURLString:url method:requestMethod] autorelease];
 }
 
 // ===== REQUEST DISPATCH ==============================================================================================

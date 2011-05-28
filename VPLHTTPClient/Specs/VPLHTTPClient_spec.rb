@@ -120,4 +120,33 @@ describe "VPLHTTPClient" do
     
   end
   
+  # ===== REQUEST GENERATION ===========================================================================================
+  
+  describe "#prepareGETRequestForURLString:" do
+    
+    before(:each) do
+      @request = @client.prepareGETRequestForURLString("https://localhost.localdomain/path/to/resource?filter=yes")
+    end
+    
+    it "should return a GET request for the given URL" do
+      @request.requestURLString.should == "https://localhost.localdomain/path/to/resource?filter=yes"
+      @request.requestMethod.should == "GET"
+    end
+    
+  end
+  
+  describe "#prepareRequestForURLString:withMethod:" do
+    
+    before(:each) do
+      @request = @client.prepareRequestForURLString("https://localhost.localdomain/path/to/resource?filter=yes",
+                                                    withMethod:"HEAD")
+    end
+    
+    it "should return a request for the specified URL using the given method" do
+      @request.requestURLString.should == "https://localhost.localdomain/path/to/resource?filter=yes"
+      @request.requestMethod.should == "HEAD"
+    end
+    
+  end
+  
 end

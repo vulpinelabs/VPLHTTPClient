@@ -17,7 +17,12 @@
 }
 
 - (id)initWithURL:(NSURL *)requestURL;
+- (id)initWithURL:(NSURL *)requestURL
+           method:(NSString *)requestMethod;
+
 - (id)initWithURLString:(NSString *)requestURLString;
+- (id)initWithURLString:(NSString *)requestURLString
+                 method:(NSString *)requestMethod;
 
 - (ASIHTTPRequest *)_httpRequest;
 
