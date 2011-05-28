@@ -29,6 +29,7 @@
   [_requestHeaders release];
   [_username release];
   [_password release];
+  [_requestBody release];
   
   [super dealloc];
 }
@@ -69,6 +70,12 @@
   [_requestHeaders setObject:headerValue
                       forKey:headerName];
 }
+
+// ===== REQUEST BODY ==================================================================================================
+#pragma mark -
+#pragma mark Request Body
+
+@synthesize requestBody=_requestBody;
 
 // ===== AUTHENTICATION ================================================================================================
 #pragma mark -

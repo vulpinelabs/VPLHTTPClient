@@ -27,6 +27,10 @@
 - (void)addRequestHeader:(NSString *)headerName
                    value:(NSString *)headerValue;
 
+// ===== REQUEST BODY ==================================================================================================
+
+@property (nonatomic,retain) NSData * requestBody;
+
 // ===== AUTHENTICATION ================================================================================================
 
 @property (nonatomic,readonly,retain) NSString * username;

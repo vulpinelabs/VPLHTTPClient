@@ -39,6 +39,22 @@ describe "VPLASIHTTPRequest" do
     
   end
   
+  # ===== REQUEST BODY =================================================================================================
+  
+  describe "#setRequestBody:" do
+    
+    before(:each) do
+      @data = "<?xml version='1.0' ?><content />".dataUsingEncoding(NSUTF8StringEncoding)
+      @request.requestBody = @data
+    end
+    
+    it "should set the ASIHTPRequest's postBody" do
+      @request.requestBody.isEqualToData(@data).should == true
+      @request._httpRequest.postBody.isEqualToData(@data).should == true
+    end
+    
+  end
+  
   # ===== AUTHENTICATION ===============================================================================================
   
   describe "#setUsername:password:" do

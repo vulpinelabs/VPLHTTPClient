@@ -15,6 +15,7 @@
   NSString * _requestURLString;
   
   NSMutableDictionary * _requestHeaders;
+  NSData * _requestBody;
   
   NSString * _username;
   NSString * _password;

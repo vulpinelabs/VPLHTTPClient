@@ -84,6 +84,28 @@
                                   value:headerValue];
 }
 
+// ===== REQUEST BODY ==================================================================================================
+#pragma mark -
+#pragma mark Request Body
+
+- (NSData *)requestBody
+{
+  return [[self _httpRequest] postBody];
+}
+
+- (void)setRequestBody:(NSData *)requestBody
+{
+  if (requestBody == nil || [requestBody isKindOfClass:[NSMutableData class]]) {
+    
+    [[self _httpRequest] setPostBody:(NSMutableData *)requestBody];
+    
+  } else {
+    
+    [[self _httpRequest] setPostBody:[NSMutableData dataWithData:requestBody]];
+    
+  }
+}
+
 // ===== AUTHENTICATION ================================================================================================
 #pragma mark -
 #pragma mark Authentication

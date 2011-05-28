@@ -42,4 +42,20 @@ describe "VPLHTTPGenericRequest" do
     
   end
   
+  # ===== REQUEST BODY =================================================================================================
+  
+  describe "#setRequestBody:" do
+    
+    before(:each) do
+      @request = VPLHTTPGenericRequest.alloc.initWithURLString("http://localhost.localdomain")
+      
+      @data = "<?xml version='1.0' ?><content />".dataUsingEncoding(NSUTF8StringEncoding)
+      @request.requestBody = @data
+    end
+    
+    it "should set the ASIHTPRequest's postBody" do
+      @request.requestBody.isEqualToData(@data).should == true
+    end
+    
+  end
 end
