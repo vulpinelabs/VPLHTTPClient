@@ -16,7 +16,13 @@
 @private
   NSString * _name;
   NSOperationQueue * _requestQueue;
+  
+  BOOL _logRequests;
 }
+
+// ===== LOG REQUESTS TOGGLE ===========================================================================================
+
+@property (nonatomic,assign) BOOL logRequests;
 
 // ===== NETWORK REQUEST TOGGLE ========================================================================================
 

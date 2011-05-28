@@ -42,6 +42,12 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   [super dealloc];
 }
 
+// ===== LOG REQUESTS TOGGLE ===========================================================================================
+#pragma mark -
+#pragma Request Logging
+
+@synthesize logRequests=_logRequests;
+
 // ===== REQUEST HANDLER REGISTRY ======================================================================================
 #pragma mark -
 #pragma mark Request Handler Registry
@@ -170,6 +176,9 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
       }
       
       // add the request
+      if (_logRequests) {
+        NSLog(@"Dispatching %@ request for: %@", request.requestMethod, request.requestURLString);
+      }
       [_requestQueue addOperation:asiRequest];
       
     } else {
