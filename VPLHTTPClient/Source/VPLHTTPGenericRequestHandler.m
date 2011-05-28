@@ -80,18 +80,24 @@
 {
   if (self.error != nil) {
     
-    errorCallback(self.error);
-  
+    if (errorCallback) {
+      errorCallback(self.error);
+    }
+    
   } else if (self.response != nil) {
     
-    successCallback(self.response);
-  
+    if (successCallback) {
+      successCallback(self.response);
+    }
+    
   } else {
     
-    NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
-                                          code:VPLHTTPRequestNotPerformedError
-                                      userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
-    errorCallback(error);
+    if (errorCallback) {
+      NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
+                                            code:VPLHTTPRequestNotPerformedError
+                                        userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
+      errorCallback(error);
+    }
     
   }
 }

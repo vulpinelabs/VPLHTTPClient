@@ -153,27 +153,34 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
       errorCallback = [[errorCallback copy] autorelease];
       
       __block ASIHTTPRequest * asiRequest = [(VPLASIHTTPRequest *)request _httpRequest];
-      [asiRequest setCompletionBlock:^(void) {
-        
-        successCallback([VPLASIHTTPResponse responseWithRequest:asiRequest]);
-        
-      }];
-      [asiRequest setFailedBlock:^(void) {
-        
-        errorCallback([VPLASIHTTPResponse errorWithASIError:asiRequest.error]);
-        
-      }];
+      if (successCallback) {
+        [asiRequest setCompletionBlock:^(void) {
+          
+          successCallback([VPLASIHTTPResponse responseWithRequest:asiRequest]);
+          
+        }];
+      }
+      
+      if (errorCallback) {
+        [asiRequest setFailedBlock:^(void) {
+          
+          errorCallback([VPLASIHTTPResponse errorWithASIError:asiRequest.error]);
+          
+        }];
+      }
       
       // add the request
       [_requestQueue addOperation:asiRequest];
       
     } else {
       
-      NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
-                                            code:VPLHTTPRequestNotPerformedError
-                                        userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
-      errorCallback(error);
-    
+      if (errorCallback) {
+        NSError * error = [NSError errorWithDomain:VPLHTTPErrorDomain
+                                              code:VPLHTTPRequestNotPerformedError
+                                          userInfo:[NSDictionary dictionaryWithObject:request forKey:@"request"]];
+        errorCallback(error);
+      }
+      
     }
     
   } else {
