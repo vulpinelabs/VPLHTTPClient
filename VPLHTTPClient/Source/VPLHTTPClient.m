@@ -149,6 +149,9 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
     
     if ([request isKindOfClass:[VPLASIHTTPRequest class]]) {
       
+      successCallback = [[successCallback copy] autorelease];
+      errorCallback = [[errorCallback copy] autorelease];
+      
       __block ASIHTTPRequest * asiRequest = [(VPLASIHTTPRequest *)request _httpRequest];
       [asiRequest setCompletionBlock:^(void) {
         
