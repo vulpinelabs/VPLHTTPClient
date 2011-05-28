@@ -12,11 +12,17 @@
 
 - (id)initWithURLString:(NSString *)URLString
 {
+  return [self initWithURLString:URLString method:@"GET"];
+}
+
+- (id)initWithURLString:(NSString *)URLString
+                 method:(NSString *)requestMethod
+{
   self = [self init];
   if (self != nil) {
     
     _requestURLString = [URLString retain];
-    _requestMethod = [@"GET" retain];
+    _requestMethod = (requestMethod ? [requestMethod retain] : [@"GET" retain]);
     
   }
   return self;

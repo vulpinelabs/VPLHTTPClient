@@ -21,6 +21,11 @@
   NSString * _password;
 }
 
+- (id)initWithURLString:(NSString *)URLString;
+
+- (id)initWithURLString:(NSString *)URLString
+                 method:(NSString *)requestMethod;
+
 // ===== REQUEST METHOD ================================================================================================
 
 @property (nonatomic,retain) NSString * requestMethod;
