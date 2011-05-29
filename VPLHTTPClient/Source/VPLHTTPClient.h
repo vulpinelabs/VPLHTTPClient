@@ -46,6 +46,10 @@
 + (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
                   forURI:(NSString *)uriString;
 
++ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
+                  forURI:(NSString *)uriString
+                  method:(NSString *)requestMethod;
+
 /*!
  *  Resets all global state, re-enabling network requests and removing all registered URI handlers.
  */
