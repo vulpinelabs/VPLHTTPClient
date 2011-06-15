@@ -1,20 +1,8 @@
-PATH
-  remote: ../rxcode
-  specs:
-    rxcode (0.0.1)
-      plist
-
-PATH
-  remote: ../speckle
-  specs:
-    speckle (0.0.1)
-      rspec (~> 2.5.0)
-      rxcode
-
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.2)
+    nokogiri (1.4.4)
     plist (3.1.0)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -24,11 +12,15 @@ GEM
     rspec-expectations (2.5.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.5.0)
+    rxcode (0.0.6)
+      nokogiri
+      plist
+      trollop
+    trollop (1.16.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   rspec (~> 2.5.0)
-  rxcode!
-  speckle!
+  rxcode

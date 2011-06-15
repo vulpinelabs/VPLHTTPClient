@@ -320,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rake speckle:generate_bridgesupport_file";
+			shellScript = "bundle exec rake rxcode:generate_bridgesupport_file";
 		};
 /* End PBXShellScriptBuildPhase section */
 
