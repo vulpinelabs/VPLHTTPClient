@@ -39,7 +39,6 @@
 		62A29F46138B3FD800598C6A /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F34138B3FD800598C6A /* ASINetworkQueue.m */; };
 		62A29F47138B3FD800598C6A /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F35138B3FD800598C6A /* ASIProgressDelegate.h */; };
 		62A29F49138B3FF400598C6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A29F48138B3FF400598C6A /* SystemConfiguration.framework */; };
-		62A29F4B138B402E00598C6A /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A29F4A138B402E00598C6A /* libz.1.2.3.dylib */; };
 		62A29F51138B40B200598C6A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A29F50138B40B100598C6A /* CoreServices.framework */; };
 		62A29F5B138B414C00598C6A /* VPLASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A29F5C138B414D00598C6A /* VPLASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */; };
@@ -49,6 +48,7 @@
 		62A29F97138C635600598C6A /* VPLASIHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29F95138C635500598C6A /* VPLASIHTTPResponse.m */; };
 		62A29FD0138F0E3800598C6A /* VPLHTTPErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A29FCE138F0E3500598C6A /* VPLHTTPErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A29FD1138F0E3800598C6A /* VPLHTTPErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A29FCF138F0E3600598C6A /* VPLHTTPErrors.m */; };
+		62DC529613A8839400B69969 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DC529513A8839400B69969 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +87,6 @@
 		62A29F34138B3FD800598C6A /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = ASIHTTPRequest/Classes/ASINetworkQueue.m; sourceTree = "<group>"; };
 		62A29F35138B3FD800598C6A /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = ASIHTTPRequest/Classes/ASIProgressDelegate.h; sourceTree = "<group>"; };
 		62A29F48138B3FF400598C6A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		62A29F4A138B402E00598C6A /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		62A29F50138B40B100598C6A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		62A29F59138B414C00598C6A /* VPLASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLASIHTTPRequest.h; sourceTree = "<group>"; };
 		62A29F5A138B414C00598C6A /* VPLASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLASIHTTPRequest.m; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		62A29F95138C635500598C6A /* VPLASIHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLASIHTTPResponse.m; sourceTree = "<group>"; };
 		62A29FCE138F0E3500598C6A /* VPLHTTPErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLHTTPErrors.h; sourceTree = "<group>"; };
 		62A29FCF138F0E3600598C6A /* VPLHTTPErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLHTTPErrors.m; sourceTree = "<group>"; };
+		62DC529513A8839400B69969 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DC529613A8839400B69969 /* libz.dylib in Frameworks */,
 				62A29F51138B40B200598C6A /* CoreServices.framework in Frameworks */,
-				62A29F4B138B402E00598C6A /* libz.1.2.3.dylib in Frameworks */,
 				62A29F49138B3FF400598C6A /* SystemConfiguration.framework in Frameworks */,
 				62492D2A13831AD10007D729 /* Foundation.framework in Frameworks */,
 			);
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				62A29F50138B40B100598C6A /* CoreServices.framework */,
-				62A29F4A138B402E00598C6A /* libz.1.2.3.dylib */,
+				62DC529513A8839400B69969 /* libz.dylib */,
 				62A29F48138B3FF400598C6A /* SystemConfiguration.framework */,
 				62492D2913831AD10007D729 /* Foundation.framework */,
 			);
