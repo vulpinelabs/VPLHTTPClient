@@ -70,4 +70,27 @@ describe "VPLASIHTTPRequest" do
     
   end
   
+  # ===== REQUEST TIMEOUT ==============================================================================================
+  
+  describe "#requestTimeout" do
+    
+    it "should default to ASIHTTPRequest.defaultTimeOutSeconds" do
+      @request.requestTimeout.should == ASIHTTPRequest.defaultTimeOutSeconds
+    end
+    
+  end
+  
+  describe "#setRequestTimeout" do
+    
+    before(:each) do
+      @request.setRequestTimeout(42.0)
+    end
+    
+    it "should update the request timeout" do
+      @request.requestTimeout.should == 42.0
+    end
+    
+  end
+  
+  
 end

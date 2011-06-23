@@ -138,6 +138,7 @@ describe "VPLHTTPClient" do
   describe "#prepareRequestForURLString:withMethod:" do
     
     before(:each) do
+      @client.defaultRequestTimeout = 53.0
       @request = @client.prepareRequestForURLString("https://localhost.localdomain/path/to/resource?filter=yes",
                                                     withMethod:"HEAD")
     end
@@ -145,6 +146,20 @@ describe "VPLHTTPClient" do
     it "should return a request for the specified URL using the given method" do
       @request.requestURLString.should == "https://localhost.localdomain/path/to/resource?filter=yes"
       @request.requestMethod.should == "HEAD"
+    end
+    
+    it "should assign the default timeout" do
+      @request.requestTimeout.should == 53.0
+    end
+    
+  end
+  
+  # ===== REQUEST TIMEOUT ==============================================================================================
+  
+  describe "#defaultRequestTimeout" do
+    
+    it "should default to 60 seconds" do
+      @client.defaultRequestTimeout.should == 60.0
     end
     
   end

@@ -23,6 +23,7 @@
     
     _requestURLString = [URLString retain];
     _requestMethod = (requestMethod ? [requestMethod retain] : [@"GET" retain]);
+    _requestTimeout = 60.0;
     
   }
   return self;
@@ -104,5 +105,11 @@
     _password = [password retain];
   }
 }
+
+// ===== REQUEST TIMEOUT ===============================================================================================
+#pragma mark -
+#pragma mark Request Timeout
+
+@synthesize requestTimeout = _requestTimeout;
 
 @end

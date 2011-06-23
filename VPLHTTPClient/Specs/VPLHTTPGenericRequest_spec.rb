@@ -58,4 +58,34 @@ describe "VPLHTTPGenericRequest" do
     end
     
   end
+  
+  # ===== REQUEST TIMEOUT ==============================================================================================
+  
+  describe "#requestTimeout" do
+    
+    before(:each) do
+      @request = VPLHTTPGenericRequest.alloc.initWithURLString("http://localhost.localdomain")
+    end
+    
+    it "should default to 60 seconds" do
+      @request.requestTimeout.should == 60.0
+    end
+    
+  end
+  
+  describe "#setRequestTimeout" do
+    before(:each) do
+      @request = VPLHTTPGenericRequest.alloc.initWithURLString("http://localhost.localdomain")
+    end
+    
+    before(:each) do
+      @request.setRequestTimeout(15.0)
+    end
+    
+    it "should update the request timeout" do
+      @request.requestTimeout.should == 15.0
+    end
+    
+  end
+  
 end

@@ -30,6 +30,7 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   if (self) {
     _requestQueue = [[NSOperationQueue alloc] init];
     [_requestQueue setMaxConcurrentOperationCount:1];
+    _defaultRequestTimeout = 60.0;
   }
   
   return self;
@@ -116,6 +117,8 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 #pragma mark -
 #pragma mark Requests
 
+@synthesize defaultRequestTimeout = _defaultRequestTimeout;
+
 - (NSObject <VPLHTTPRequest> *)prepareGETRequestForURLString:(NSString *)url
 {
   return [self prepareRequestForURLString:url
@@ -125,7 +128,10 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
 - (NSObject <VPLHTTPRequest> *)prepareRequestForURLString:(NSString *)url
                                                withMethod:(NSString *)requestMethod
 {
-  return [[[VPLASIHTTPRequest alloc] initWithURLString:url method:requestMethod] autorelease];
+  NSObject <VPLHTTPRequest> * request = [[VPLASIHTTPRequest alloc] initWithURLString:url method:requestMethod];
+  request.requestTimeout = self.defaultRequestTimeout;
+  
+  return [request autorelease];
 }
 
 // ===== REQUEST DISPATCH ==============================================================================================

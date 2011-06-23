@@ -19,6 +19,8 @@
   
   NSString * _username;
   NSString * _password;
+  
+  NSTimeInterval _requestTimeout;
 }
 
 - (id)initWithURLString:(NSString *)URLString;

@@ -18,6 +18,7 @@
   NSOperationQueue * _requestQueue;
   
   BOOL _logRequests;
+  NSTimeInterval _defaultRequestTimeout;
 }
 
 // ===== LOG REQUESTS TOGGLE ===========================================================================================
@@ -58,6 +59,10 @@
 // ===== NAME ==========================================================================================================
 
 @property (nonatomic, retain) NSString * name;
+
+// ===== DEFAULT TIMEOUT ===============================================================================================
+
+@property (nonatomic, assign) NSTimeInterval defaultRequestTimeout;
 
 // ===== REQUESTS ======================================================================================================
 

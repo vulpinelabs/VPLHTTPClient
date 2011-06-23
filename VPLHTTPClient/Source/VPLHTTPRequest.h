@@ -39,4 +39,8 @@
 - (void)setUsername:(NSString *)username
            password:(NSString *)password;
 
+// ===== REQUEST TIMEOUT ===============================================================================================
+
+@property (nonatomic,assign) NSTimeInterval requestTimeout;
+
 @end

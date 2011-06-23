@@ -142,4 +142,18 @@
   [[self _httpRequest] setPassword:password];
 }
 
+// ===== REQUEST TIMEOUT ===============================================================================================
+#pragma mark -
+#pragma mark Request Timeout
+
+- (NSTimeInterval)requestTimeout
+{
+  return [[self _httpRequest] timeOutSeconds];
+}
+
+- (void)setRequestTimeout:(NSTimeInterval)requestTimeout
+{
+  [[self _httpRequest] setTimeOutSeconds:requestTimeout];
+}
+
 @end
