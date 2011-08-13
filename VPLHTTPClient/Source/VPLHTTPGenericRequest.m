@@ -24,6 +24,7 @@
     _requestURLString = [URLString retain];
     _requestMethod = (requestMethod ? [requestMethod retain] : [@"GET" retain]);
     _requestTimeout = 60.0;
+    _validatesSSLCertificates = YES;
     
   }
   return self;
@@ -111,5 +112,11 @@
 #pragma mark Request Timeout
 
 @synthesize requestTimeout = _requestTimeout;
+
+// ===== VALIDATES SSL CERTIFICATES ====================================================================================
+#pragma mark -
+#pragma mark Validates SSL Certificates
+
+@synthesize validatesSSLCertificates = _validatesSSLCertificates;
 
 @end

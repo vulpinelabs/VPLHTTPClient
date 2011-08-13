@@ -21,6 +21,7 @@
   NSString * _password;
   
   NSTimeInterval _requestTimeout;
+  BOOL _validatesSSLCertificates;
 }
 
 - (id)initWithURLString:(NSString *)URLString;

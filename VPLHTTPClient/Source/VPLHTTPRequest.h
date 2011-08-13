@@ -43,4 +43,8 @@
 
 @property (nonatomic,assign) NSTimeInterval requestTimeout;
 
+// ===== VALIDATES SSL CERTIFICATES ====================================================================================
+
+@property (nonatomic,assign) BOOL validatesSSLCertificates;
+
 @end

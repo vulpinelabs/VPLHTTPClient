@@ -156,4 +156,18 @@
   [[self _httpRequest] setTimeOutSeconds:requestTimeout];
 }
 
+// ===== VALIDATES SSL CERTIFICATES ====================================================================================
+#pragma mark -
+#pragma mark Validates SSL Certificates
+
+- (BOOL)validatesSSLCertificates
+{
+  return [[self _httpRequest] validatesSecureCertificate];
+}
+
+- (void)setValidatesSSLCertificates:(BOOL)validatesSSLCertificates
+{
+  [[self _httpRequest] setValidatesSecureCertificate:validatesSSLCertificates];  
+}
+
 @end
