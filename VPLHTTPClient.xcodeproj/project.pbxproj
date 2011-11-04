@@ -280,6 +280,9 @@
 /* Begin PBXProject section */
 		62492CF213831AAF0007D729 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 62492CF513831AAF0007D729 /* Build configuration list for PBXProject "VPLHTTPClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

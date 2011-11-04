@@ -146,7 +146,10 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
   
   for (NSObject<VPLHTTPRequestHandler> * handler in globalHandlers) {
-    if ([handler canPerformRequest:request]) return YES;
+    if ([handler canPerformRequest:request]) {
+      [globalHandlers release];
+      return YES;
+    }
   }
   
   [globalHandlers release];
