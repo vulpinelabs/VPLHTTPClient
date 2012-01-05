@@ -40,6 +40,8 @@
 
 // ===== GLOBAL REQUEST HANDLERS =======================================================================================
 
++ (void)registerGlobalHandler:(id<VPLHTTPRequestHandler>)globalHandler;
+
 /*!
  *  Registers a global handler for the given URI string that returns the given response. With
  *  #setNetworkRequestsEnabled:, this allows HTTP requests to be mocked during testing.

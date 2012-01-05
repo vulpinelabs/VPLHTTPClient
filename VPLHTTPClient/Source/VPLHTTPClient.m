@@ -67,12 +67,11 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
 }
 
-+ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
-                  forURI:(NSString *)uriString
++ (void)registerGlobalHandler:(id<VPLHTTPRequestHandler>)globalHandler
 {
-  [self registerResponse:response
-                  forURI:uriString
-                  method:@"GET"];
+  @synchronized (self) {
+    [VPLHTTPClientGlobalHandlers addObject:globalHandler];
+  }
 }
 
 + (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
@@ -84,10 +83,17 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
                                                                 requestMethod,
                                                                 uriString]];
   
-  @synchronized (self) {
-    [VPLHTTPClientGlobalHandlers addObject:handler];
-  }
+  [self registerGlobalHandler:handler];
+
   [handler release];  
+}
+
++ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
+                  forURI:(NSString *)uriString
+{
+  [self registerResponse:response
+                  forURI:uriString
+                  method:@"GET"];
 }
 
 + (void)reset
