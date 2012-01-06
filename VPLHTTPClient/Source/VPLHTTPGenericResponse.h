@@ -37,4 +37,9 @@
  */
 + (NSObject <VPLHTTPResponse> *)notFoundResponse;
 
+/*!
+ *  Returns an empty 401 (Not Authorized) response.
+ */
++ (NSObject <VPLHTTPResponse> *)accessDeniedResponse;
+
 @end

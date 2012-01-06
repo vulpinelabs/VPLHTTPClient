@@ -83,6 +83,13 @@ NSString * const VPLHTTPContentTypeHeader = @"Content-Type";
   return [response autorelease];
 }
 
++ (NSObject <VPLHTTPResponse> *)accessDeniedResponse
+{
+  return [[[self alloc] initWithResponseCode:401
+                                        body:[NSData data]
+                                 contentType:@"text/plain"] autorelease];
+}
+
 + (NSObject <VPLHTTPResponse> *)notFoundResponse
 {
   return [[[self alloc] initWithResponseCode:404

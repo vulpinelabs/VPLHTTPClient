@@ -41,17 +41,18 @@
 // ===== GLOBAL REQUEST HANDLERS =======================================================================================
 
 + (void)registerGlobalHandler:(id<VPLHTTPRequestHandler>)globalHandler;
++ (void)unregisterGlobalHandler:(id<VPLHTTPRequestHandler>)globalHandler;
 
 /*!
  *  Registers a global handler for the given URI string that returns the given response. With
  *  #setNetworkRequestsEnabled:, this allows HTTP requests to be mocked during testing.
  */
-+ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
-                  forURI:(NSString *)uriString;
++ (id<VPLHTTPRequestHandler>)registerResponse:(NSObject <VPLHTTPResponse> *)response
+                                       forURI:(NSString *)uriString;
 
-+ (void)registerResponse:(NSObject <VPLHTTPResponse> *)response
-                  forURI:(NSString *)uriString
-                  method:(NSString *)requestMethod;
++ (id<VPLHTTPRequestHandler>)registerResponse:(NSObject <VPLHTTPResponse> *)response
+                                       forURI:(NSString *)uriString
+                                       method:(NSString *)requestMethod;
 
 /*!
  *  Resets all global state, re-enabling network requests and removing all registered URI handlers.
