@@ -74,4 +74,8 @@
 - (NSObject <VPLHTTPRequest> *)prepareRequestForURLString:(NSString *)url
                                                withMethod:(NSString *)requestMethod;
 
+// ===== CANCEL ========================================================================================================
+
+- (void)cancelPendingRequests;
+
 @end

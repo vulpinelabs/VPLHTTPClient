@@ -242,4 +242,12 @@ static NSMutableArray * VPLHTTPClientGlobalHandlers = nil;
   }
 }
 
+// ===== CANCEL ========================================================================================================
+#pragma mark - Cancel
+
+- (void)cancelPendingRequests
+{
+  [_requestQueue cancelAllOperations];
+}
+
 @end
